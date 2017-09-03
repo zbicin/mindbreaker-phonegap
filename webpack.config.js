@@ -7,7 +7,7 @@ const paths = {
 };
 
 module.exports = {
-    entry: path.resolve(paths.src, 'index.ts'),
+    entry: path.resolve(paths.src, 'Main.ts'),
     devtool: 'sourcemap',
     output: {
         path: paths.www,
@@ -21,6 +21,9 @@ module.exports = {
                 loader: 'ts-loader'
             }
         ]
+    },
+    resolve: {
+      extensions: ['.ts', '.js']
     },
     plugins: [
         new CopyWebpackPlugin([
